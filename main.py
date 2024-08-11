@@ -28,7 +28,7 @@ async def get_information_from_url_with_timeout(url: str, file_number: int):
     try:
         async with asyncio.timeout(TIMEOUT_TIME):
             html_content = await get_information_from_url(url)
-            await save_to_file(html_content, file_number)
+        await save_to_file(html_content, file_number)
     except asyncio.TimeoutError:
         print("Getting information from url timed out, moving on...")
 
